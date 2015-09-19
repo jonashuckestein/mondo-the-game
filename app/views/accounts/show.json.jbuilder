@@ -1,1 +1,1 @@
-json.extract! @account, :id, :email, :access_token, :created_at, :updated_at
+json.extract! @account, :id, :email, :access_token, :mondo_id, :points, :created_at, :updated_at

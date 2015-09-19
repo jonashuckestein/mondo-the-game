@@ -5,8 +5,10 @@
 <table>
   <thead>
     <tr>
+      <th>Mondo Account ID</th>
       <th>Email</th>
       <th>Access token</th>
+      <th>Points</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,8 +16,10 @@
   <tbody>
     <% @accounts.each do |account| %>
       <tr>
+        <td><%= account.mondo_id %></td>
         <td><%= account.email %></td>
         <td><%= account.access_token %></td>
+        <td><%= account.points %></td>
         <td><%= link_to 'Show', account %></td>
         <td><%= link_to 'Edit', edit_account_path(account) %></td>
         <td><%= link_to 'Destroy', account, method: :delete, data: { confirm: 'Are you sure?' } %></td>

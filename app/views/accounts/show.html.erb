@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Mondo Account ID:</strong>
+  <%= @account.mondo_id %>
+</p>
+
+<p>
   <strong>Email:</strong>
   <%= @account.email %>
 </p>
@@ -8,6 +13,11 @@
 <p>
   <strong>Access token:</strong>
   <%= @account.access_token %>
+</p>
+
+<p>
+  <strong>Points</strong>
+  <%= @account.points %>
 </p>
 
 <%= link_to 'Edit', edit_account_path(@account) %> |
