@@ -15,13 +15,18 @@ class WebhooksController < ApplicationController
       logger.info "Fetched transaction #{tx.inspect}"
       if Merchant.find_by_mondo_id(tx.merchant.id).nil?
         # YAY, the customer is the first to visit this merchant!
+        Merchant.create!(
+          mondo_id: tx.merchant.id,
+          mondo_data: tx.merchant.raw_data,
+        )
         account.increment!(:points)
         mondo.create_feed_item(
           type: "image",
-          title: "You discovered #{tx.merchant.name}!",
-          image_url: "http://4sqatl.com/wp-content/uploads/2011/01/foursquare-badge-pa-groundhog-day-punxsutawney-phil.jpg",
-          background_color: "#FCF1EE",
-          body: "You have #{account.points} points! WOO!",
+          title: "#{tx.merchant.name}!",
+          image_url: "http://foursquareguru.com/media/badges/supermayor_big.png",
+          background_color: "#DDFFDC",
+          body: "You were here first! You have #{account.points} points! 🎉",
+          app_uri: "mondo://basic_title_and_body",
         )
       end
     else
