@@ -12,16 +12,20 @@
   <% end %>
 
   <div class="field">
+    <%= f.label "Mondo ID" %><br>
+    <%= f.text_field :mondo_id %>
+  </div>
+  <div class="field">
     <%= f.label :email %><br>
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :mondo_id %><br>
-    <%= f.text_field :mondo_id %>
-  </div>
-  <div class="field">
     <%= f.label :access_token %><br>
     <%= f.text_field :access_token %>
+  </div>
+  <div class="field">
+    <%= f.label :points %><br>
+    <%= f.text_field :points %>
   </div>
   <div class="actions">
     <%= f.submit %>
